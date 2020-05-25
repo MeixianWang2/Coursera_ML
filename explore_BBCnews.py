@@ -19,19 +19,19 @@ stopwords = ["a", "about", "above", "after", "again", "against", "all", "am", "a
 # save text and use ' ' to replace of stopwords
 sentences = []
 labels = []
-with open("/Users/annawang/Documents/RAproject/coursera_ml/bbc-text.csv",'r') as csvfile:
-    data = csv.reader(csvfile, delimiter=',')
-    next(data)
-    for row in data:
-        labels.append(row[0])
-        sentence = row[1]
-        for word in stopwords:
-            token = " " + word + " "
-            sentence = sentence.replace(token, " ")
-            sentence = sentence.replace("  ", " ")
-        sentences.append(sentence)
-print(len(sentences))
-print(sentences[0])
+with open("/Users/annawang/Documents/GitHub/Coursera_ML/bbc-text.csv",'r') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        next(reader)
+        for row in reader:
+            labels.append(row[0])
+            sentence = row[1]
+            for word in stopwords:
+                token = " " + word + " "
+                sentence = sentence.replace(token, " ")
+                sentence = sentence.replace("  ", " ")
+            sentences.append(sentence)
+
+print(len(sentences)
 
 # tokenize the words and sentences
 #def Tokenizer(num_words=None, filters='!"#$%&()*+,-./:;<=>?...', lower=True, split=' ', char_level=False, oov_token=None, document_count=0, **kwargs)
